@@ -7,7 +7,7 @@
   <meta name="description" content="Sleek Dashboard - Free Bootstrap 4 Admin Dashboard Template and UI Kit. It is very powerful bootstrap admin dashboard, which allows you to build products like admin panels, content management systems and CRMs etc.">
 
 
-  <title>Sleek - Admin Dashboard Template</title>
+  <title>Table - Sleek Admin Dashboard Template</title>
 
   <!-- GOOGLE FONTS -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500|Poppins:400,500,600,700|Roboto:400,500" rel="stylesheet" />
@@ -19,19 +19,15 @@
 
   
   
-  <!-- No Extra plugin used -->
-  
-  
-  
-  <link href="assets/plugins/jvectormap/jquery-jvectormap-2.0.3.css" rel="stylesheet" />
-  
-  
-  
   <link href="assets/plugins/daterangepicker/daterangepicker.css" rel="stylesheet" />
   
   
   
-  <link href="assets/plugins/toastr/toastr.min.css" rel="stylesheet" />
+  <link href="assets/plugins/data-tables/datatables.bootstrap4.min.css" rel="stylesheet" />
+  
+  
+  
+  <!-- No Extra plugin used -->
   
   
 
@@ -62,8 +58,6 @@
     NProgress.start();
   </script>
 
-  
-  <div id="toaster"></div>
   
 
   <div class="wrapper">
@@ -119,19 +113,19 @@
                 
 
                 
-                  <li  class="has-sub active expand" >
+                  <li  class="has-sub" >
                     <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#dashboard"
                       aria-expanded="false" aria-controls="dashboard">
                       <i class="mdi mdi-view-dashboard-outline"></i>
                       <span class="nav-text">Dashboard</span> <b class="caret"></b>
                     </a>
-                    <ul  class="collapse show"  id="dashboard"
+                    <ul  class="collapse"  id="dashboard"
                       data-parent="#sidebar-menu">
                       <div class="sub-menu">
                         
                         
                           
-                            <li  class="active" >
+                            <li >
                               <a class="sidenav-item-link" href="index.html">
                                 <span class="nav-text">Ecommerce</span>
                                 
@@ -595,13 +589,13 @@
                 
 
                 
-                  <li  class="has-sub" >
+                  <li  class="has-sub active expand" >
                     <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#tables"
                       aria-expanded="false" aria-controls="tables">
                       <i class="mdi mdi-table"></i>
                       <span class="nav-text">Tables</span> <b class="caret"></b>
                     </a>
-                    <ul  class="collapse"  id="tables"
+                    <ul  class="collapse show"  id="tables"
                       data-parent="#sidebar-menu">
                       <div class="sub-menu">
                         
@@ -618,15 +612,15 @@
 
                         
                         
-                        <li  class="has-sub" >
+                        <li  class="has-sub active expand" >
                           <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#data-tables"
                             aria-expanded="false" aria-controls="data-tables">
                             <span class="nav-text">Data Tables</span> <b class="caret"></b>
                           </a>
-                          <ul  class="collapse"  id="data-tables">
+                          <ul  class="collapse show"  id="data-tables">
                             <div class="sub-menu">
                               
-                              <li >
+                              <li  class="active" >
                                 <a href="basic-data-table.html">Basic Data Table</a>
                               </li>
                               
@@ -1157,746 +1151,828 @@
 
 
       <div class="content-wrapper">
-        <div class="content">						 
-                  <!-- Top Statistics -->
-                  <div class="row">
-                    <div class="col-xl-3 col-sm-6">
-                      <div class="card card-mini mb-4">
-                        <div class="card-body">
-                          <h2 class="mb-1">71,503</h2>
-                          <p>Online Signups</p>
-                          <div class="chartjs-wrapper">
-                            <canvas id="barChart"></canvas>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-6">
-                      <div class="card card-mini  mb-4">
-                        <div class="card-body">
-                          <h2 class="mb-1">9,503</h2>
-                          <p>New Visitors Today</p>
-                          <div class="chartjs-wrapper">
-                            <canvas id="dual-line"></canvas>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-6">
-                      <div class="card card-mini mb-4">
-                        <div class="card-body">
-                          <h2 class="mb-1">71,503</h2>
-                          <p>Monthly Total Order</p>
-                          <div class="chartjs-wrapper">
-                            <canvas id="area-chart"></canvas>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-6">
-                      <div class="card card-mini mb-4">
-                        <div class="card-body">
-                          <h2 class="mb-1">9,503</h2>
-                          <p>Total Revenue This Year</p>
-                          <div class="chartjs-wrapper">
-                            <canvas id="line"></canvas>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-
-						<div class="row">
-							<div class="col-xl-8 col-md-12">
-                      <!-- Sales Graph -->
-                      <div class="card card-default" data-scroll-height="675">
-                        <div class="card-header">
-                          <h2>Sales Of The Year</h2>
-                        </div>
-                        <div class="card-body">
-                          <canvas id="linechart" class="chartjs"></canvas>
-                        </div>
-                        <div class="card-footer d-flex flex-wrap bg-white p-0">
-                          <div class="col-6 px-0">
-                            <div class="text-center p-4">
-                              <h4>$6,308</h4>
-                              <p class="mt-2">Total orders of this year</p>
-                            </div>
-                          </div>
-                          <div class="col-6 px-0">
-                            <div class="text-center p-4 border-left">
-                              <h4>$70,506</h4>
-                              <p class="mt-2">Total revenue of this year</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-</div>
-							<div class="col-xl-4 col-md-12">
-                  <!-- Doughnut Chart -->
-                  <div class="card card-default" data-scroll-height="675">
-                    <div class="card-header justify-content-center">
-                      <h2>Orders Overview</h2>
-                    </div>
-                    <div class="card-body" >
-                      <canvas id="doChart" ></canvas>
-                    </div>
-                    <a href="#" class="pb-5 d-block text-center text-muted"><i class="mdi mdi-download mr-2"></i> Download overall report</a>
-                    <div class="card-footer d-flex flex-wrap bg-white p-0">
-                      <div class="col-6">
-                        <div class="py-4 px-4">
-                          <ul class="d-flex flex-column justify-content-between">
-                            <li class="mb-2"><i class="mdi mdi-checkbox-blank-circle-outline mr-2" style="color: #4c84ff"></i>Order Completed</li>
-                            <li><i class="mdi mdi-checkbox-blank-circle-outline mr-2" style="color: #80e1c1 "></i>Order Unpaid</li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div class="col-6 border-left">
-                        <div class="py-4 px-4 ">
-                          <ul class="d-flex flex-column justify-content-between">
-                            <li class="mb-2"><i class="mdi mdi-checkbox-blank-circle-outline mr-2" style="color: #8061ef"></i>Order Pending</li>
-                            <li><i class="mdi mdi-checkbox-blank-circle-outline mr-2" style="color: #ffa128"></i>Order Canceled</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-</div>
-						</div>
-
-						<div class="row">
-							<div class="col-xl-4 col-lg-6 col-12">
+        <div class="content">							<div class="breadcrumb-wrapper">
+								<h1>Tables</h1>
 								
-                  <!-- Polar and Radar Chart -->
-                  <div class="card card-default">
-                    <div class="card-header justify-content-center">
-                      <h2>Sales Overview</h2>
-                    </div>
-                    <div class="card-body pt-0">
-                      <ul class="nav nav-pills mb-5 mt-5 nav-style-fill nav-justified" id="pills-tab" role="tablist">
-                        <li class="nav-item">
-                          <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Sales Status</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Monthly Sales</a>
-                        </li>
-                      </ul>
-                      <div class="tab-content" id="pills-tabContent">
-                        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                          <canvas id="polar"></canvas>
-                        </div>
-                        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                          <canvas id="radar"></canvas>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb p-0">
+            <li class="breadcrumb-item">
+              <a href="index.html">
+                <span class="mdi mdi-home"></span>                
+              </a>
+            </li>
+            <li class="breadcrumb-item">
+              data-tables
+            </li>
+            <li class="breadcrumb-item" aria-current="page">basic-data-table</li>
+          </ol>
+        </nav>
 
 							</div>
-							<div class="col-xl-4 col-lg-6 col-12"> 
-                  <!-- Top Sell Table -->
-                  <div class="card card-table-border-none" data-scroll-height="550">
-                    <div class="card-header justify-content-between">
-                      <h2>Sold by Units</h2>
-                      <div>
-                          <button class="text-black-50 mr-2 font-size-20"><i class="mdi mdi-cached"></i></button>
-                          <div class="dropdown show d-inline-block widget-dropdown">
-                              <a class="dropdown-toggle icon-burger-mini" href="#" role="button" id="dropdown-units" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static"></a>
-                              <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-units">
-                                <li class="dropdown-item"><a  href="#">Action</a></li>
-                                <li class="dropdown-item"><a  href="#">Another action</a></li>
-                                <li class="dropdown-item"><a  href="#">Something else here</a></li>
-                              </ul>
-                            </div>
-                      </div>
-                    </div>
-                    <div class="card-body slim-scroll py-0">
-                      <table class="table ">
-                        <tbody>
-                          <tr>
-                            <td class="text-dark">Backpack</td>
-                            <td class="text-center">9</td>
-                            <td class="text-right">33% <i class="mdi mdi-arrow-up-bold text-success pl-1 font-size-12"></i> </td>
-                          </tr>
-                          <tr>
-                            <td class="text-dark">T-Shirt</td>
-                            <td class="text-center">6</td>
-                            <td class="text-right">150% <i class="mdi mdi-arrow-up-bold text-success pl-1 font-size-12"></i> </td>
-                          </tr>
-                          <tr>
-                            <td class="text-dark">Coat</td>
-                            <td class="text-center">3</td>
-                            <td class="text-right">50% <i class="mdi mdi-arrow-up-bold text-success pl-1 font-size-12"></i> </td>
-                          </tr>
-                          <tr>
-                            <td class="text-dark">Necklace</td>
-                            <td class="text-center">7</td>
-                            <td class="text-right">150% <i class="mdi mdi-arrow-up-bold text-success pl-1 font-size-12"></i> </td>
-                          </tr>
-                          <tr>
-                            <td class="text-dark">Jeans Pant</td>
-                            <td class="text-center">10</td>
-                            <td class="text-right">300% <i class="mdi mdi-arrow-down-bold text-danger pl-1 font-size-12"></i> </td>
-                          </tr>
-                          <tr>
-                            <td class="text-dark">Shoes</td>
-                            <td class="text-center">5</td>
-                            <td class="text-right">100% <i class="mdi mdi-arrow-up-bold text-success pl-1 font-size-12"></i> </td>
-                          </tr>
-                          <tr>
-                            <td class="text-dark">T-Shirt</td>
-                            <td class="text-center">6</td>
-                            <td class="text-right">150% <i class="mdi mdi-arrow-up-bold text-success pl-1 font-size-12"></i> </td>
-                          </tr>
-                        </tbody>
-                      </table>
 
-                    </div>
-                    <div class="card-footer bg-white py-4">
-                      <a href="#" class="btn-link py-3 text-uppercase">View Report</a>
-                    </div>
-                  </div>
-</div>
-							<div class="col-xl-4 col-12">
-                        <!-- Notification Table -->
-                        <div class="card card-default" data-scroll-height="550">
-                          <div class="card-header justify-content-between ">
-                            <h2>Latest Notifications</h2>
-                            <div>
-                                <button class="text-black-50 mr-2 font-size-20"><i class="mdi mdi-cached"></i></button>
-                                <div class="dropdown show d-inline-block widget-dropdown">
-                                    <a class="dropdown-toggle icon-burger-mini" href="#" role="button" id="dropdown-notification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static"></a>
-                                    <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-notification">
-                                      <li class="dropdown-item"><a  href="#">Action</a></li>
-                                      <li class="dropdown-item"><a  href="#">Another action</a></li>
-                                      <li class="dropdown-item"><a  href="#">Something else here</a></li>
-                                    </ul>
-                                  </div>
-                            </div>
+							<div class="row">
+								<div class="col-12">
+									<div class="card card-default">
+										<div class="card-header card-header-border-bottom d-flex justify-content-between">
+											<h2>Basic Data Table</h2>
 
-                          </div>
-                          <div class="card-body slim-scroll">
-                            <div class="media pb-3 align-items-center justify-content-between">
-                              <div class="d-flex rounded-circle align-items-center justify-content-center mr-3 media-icon iconbox-45 bg-primary text-white">
-                                <i class="mdi mdi-cart-outline font-size-20"></i>
-                              </div>
-                              <div class="media-body pr-3 ">
-                                <a class="mt-0 mb-1 font-size-15 text-dark" href="#">New Order</a>
-                                <p >Selena has placed an new order</p>
-                              </div>
-                              <span class=" font-size-12 d-inline-block"><i class="mdi mdi-clock-outline"></i> 10 AM</span>
-                            </div>
+											<a href="https://datatables.net/examples/styling/display.html" target="_blank" class="btn btn-outline-primary btn-sm text-uppercase">
+												<i class=" mdi mdi-link mr-1"></i> Docs
+											</a>
+										</div>
 
-                            <div class="media py-3 align-items-center justify-content-between">
-                              <div class="d-flex rounded-circle align-items-center justify-content-center mr-3 media-icon iconbox-45 bg-success text-white">
-                                <i class="mdi mdi-email-outline font-size-20"></i>
-                              </div>
-                              <div class="media-body pr-3">
-                                <a class="mt-0 mb-1 font-size-15 text-dark" href="#">New Enquiry</a>
-                                <p >Phileine has placed an new order</p>
-                              </div>
-                              <span class=" font-size-12 d-inline-block"><i class="mdi mdi-clock-outline"></i> 9 AM</span>
-                            </div>
+										<div class="card-body">
+											<div class="basic-data-table">
+												<table id="basic-data-table" class="table nowrap" style="width:100%">
+													<thead>
+														<tr>
+															<th>First name</th>
+															<th>Last name</th>
+															<th>Position</th>
+															<th>Office</th>
+															<th>Age</th>
+															<th>Start date</th>
+															<th>Salary</th>
+															<th>Extn.</th>
+															<th>E-mail</th>
+														</tr>
+													</thead>
 
+													<tbody>
+														<tr>
+															<td>Tiger</td>
+															<td>Nixon</td>
+															<td>System Architect</td>
+															<td>Edinburgh</td>
+															<td>61</td>
+															<td>2011/04/25</td>
+															<td>$320,800</td>
+															<td>5421</td>
+															<td>t.nixon@datatables.net</td>
+														</tr>
 
-                            <div class="media py-3 align-items-center justify-content-between">
-                              <div class="d-flex rounded-circle align-items-center justify-content-center mr-3 media-icon iconbox-45 bg-warning text-white">
-                                <i class="mdi mdi-stack-exchange font-size-20"></i>
-                              </div>
-                              <div class="media-body pr-3">
-                                <a class="mt-0 mb-1 font-size-15 text-dark" href="#">Support Ticket</a>
-                                <p >Emma has placed an new order</p>
-                              </div>
-                              <span class=" font-size-12 d-inline-block"><i class="mdi mdi-clock-outline"></i> 10 AM</span>
-                            </div>
+														<tr>
+															<td>Garrett</td>
+															<td>Winters</td>
+															<td>Accountant</td>
+															<td>Tokyo</td>
+															<td>63</td>
+															<td>2011/07/25</td>
+															<td>$170,750</td>
+															<td>8422</td>
+															<td>g.winters@datatables.net</td>
+														</tr>
 
-                            <div class="media py-3 align-items-center justify-content-between">
-                              <div class="d-flex rounded-circle align-items-center justify-content-center mr-3 media-icon iconbox-45 bg-primary text-white">
-                                <i class="mdi mdi-cart-outline font-size-20"></i>
-                              </div>
-                              <div class="media-body pr-3">
-                                <a class="mt-0 mb-1 font-size-15 text-dark" href="#">New order</a>
-                                <p >Ryan has placed an new order</p>
-                              </div>
-                              <span class=" font-size-12 d-inline-block"><i class="mdi mdi-clock-outline"></i> 10 AM</span>
-                            </div>
+														<tr>
+															<td>Ashton</td>
+															<td>Cox</td>
+															<td>Junior Technical Author</td>
+															<td>San Francisco</td>
+															<td>66</td>
+															<td>2009/01/12</td>
+															<td>$86,000</td>
+															<td>1562</td>
+															<td>a.cox@datatables.net</td>
+														</tr>
 
-                            <div class="media py-3 align-items-center justify-content-between">
-                              <div class="d-flex rounded-circle align-items-center justify-content-center mr-3 media-icon iconbox-45 bg-info text-white">
-                                <i class="mdi mdi-calendar-blank font-size-20"></i>
-                              </div>
-                              <div class="media-body pr-3">
-                                <a class="mt-0 mb-1 font-size-15 text-dark" href="">Comapny Meetup</a>
-                                <p >Phileine has placed an new order</p>
-                              </div>
-                              <span class=" font-size-12 d-inline-block"><i class="mdi mdi-clock-outline"></i> 10 AM</span>
-                            </div>
+														<tr>
+															<td>Cedric</td>
+															<td>Kelly</td>
+															<td>Senior Javascript Developer</td>
+															<td>Edinburgh</td>
+															<td>22</td>
+															<td>2012/03/29</td>
+															<td>$433,060</td>
+															<td>6224</td>
+															<td>c.kelly@datatables.net</td>
+														</tr>
 
-                            <div class="media py-3 align-items-center justify-content-between">
-                              <div class="d-flex rounded-circle align-items-center justify-content-center mr-3 media-icon iconbox-45 bg-warning text-white">
-                                <i class="mdi mdi-stack-exchange font-size-20"></i>
-                              </div>
-                              <div class="media-body pr-3">
-                                <a class="mt-0 mb-1 font-size-15 text-dark" href="#">Support Ticket</a>
-                                <p >Emma has placed an new order</p>
-                              </div>
-                              <span class=" font-size-12 d-inline-block"><i class="mdi mdi-clock-outline"></i> 10 AM</span>
-                            </div>
+														<tr>
+															<td>Airi</td>
+															<td>Satou</td>
+															<td>Accountant</td>
+															<td>Tokyo</td>
+															<td>33</td>
+															<td>2008/11/28</td>
+															<td>$162,700</td>
+															<td>5407</td>
+															<td>a.satou@datatables.net</td>
+														</tr>
 
-                            <div class="media py-3 align-items-center justify-content-between">
-                              <div class="d-flex rounded-circle align-items-center justify-content-center mr-3 media-icon iconbox-45 bg-success text-white">
-                                <i class="mdi mdi-email-outline font-size-20"></i>
-                              </div>
-                              <div class="media-body pr-3">
-                                <a class="mt-0 mb-1 font-size-15 text-dark" href="#">New Enquiry</a>
-                                <p >Phileine has placed an new order</p>
-                              </div>
-                              <span class=" font-size-12 d-inline-block"><i class="mdi mdi-clock-outline"></i> 9 AM</span>
-                            </div>
+														<tr>
+															<td>Brielle</td>
+															<td>Williamson</td>
+															<td>Integration Specialist</td>
+															<td>New York</td>
+															<td>61</td>
+															<td>2012/12/02</td>
+															<td>$372,000</td>
+															<td>4804</td>
+															<td>b.williamson@datatables.net</td>
+														</tr>
 
-                          </div>
-                          <div class="mt-3"></div>
-                        </div>
-</div>
-						</div>
+														<tr>
+															<td>Herrod</td>
+															<td>Chandler</td>
+															<td>Sales Assistant</td>
+															<td>San Francisco</td>
+															<td>59</td>
+															<td>2012/08/06</td>
+															<td>$137,500</td>
+															<td>9608</td>
+															<td>h.chandler@datatables.net</td>
+														</tr>
 
-						<div class="row">
-							<div class="col-12"> 
-                  <!-- Recent Order Table -->
-                  <div class="card card-table-border-none" id="recent-orders">
-                    <div class="card-header justify-content-between">
-                      <h2>Recent Orders</h2>
-                      <div class="date-range-report ">
-                        <span></span>
-                      </div>
-                    </div>
-                    <div class="card-body pt-0 pb-5">
-                      <table class="table card-table table-responsive table-responsive-large" style="width:100%">
-                        <thead>
-                          <tr>
-                            <th>Order ID</th>
-                            <th>Product Name</th>
-                            <th class="d-none d-lg-table-cell">Units</th>
-                            <th class="d-none d-lg-table-cell">Order Date</th>
-                            <th class="d-none d-lg-table-cell">Order Cost</th>
-                            <th>Status</th>
-                            <th></th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td >24541</td>
-                            <td >
-                              <a class="text-dark" href=""> Coach Swagger</a>
-                            </td>
-                            <td class="d-none d-lg-table-cell">1 Unit</td>
-                            <td class="d-none d-lg-table-cell">Oct 20, 2018</td>
-                            <td class="d-none d-lg-table-cell">$230</td>
-                            <td >
-                              <span class="badge badge-success">Completed</span>
-                            </td>
-                            <td class="text-right">
-                              <div class="dropdown show d-inline-block widget-dropdown">
-                                <a class="dropdown-toggle icon-burger-mini" href="" role="button" id="dropdown-recent-order1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static"></a>
-                                <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-recent-order1">
-                                  <li class="dropdown-item">
-                                    <a href="#">View</a>
-                                  </li>
-                                  <li class="dropdown-item">
-                                    <a href="#">Remove</a>
-                                  </li>
-                                </ul>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td >24541</td>
-                            <td >
-                              <a class="text-dark" href=""> Toddler Shoes, Gucci Watch</a>
-                            </td>
-                            <td class="d-none d-lg-table-cell">2 Units</td>
-                            <td class="d-none d-lg-table-cell">Nov 15, 2018</td>
-                            <td class="d-none d-lg-table-cell">$550</td>
-                            <td >
-                              <span class="badge badge-warning">Delayed</span>
-                            </td>
-                            <td class="text-right">
-                              <div class="dropdown show d-inline-block widget-dropdown">
-                                <a class="dropdown-toggle icon-burger-mini" href="#" role="button" id="dropdown-recent-order2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static"></a>
-                                <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-recent-order2">
-                                  <li class="dropdown-item">
-                                    <a href="#">View</a>
-                                  </li>
-                                  <li class="dropdown-item">
-                                    <a href="#">Remove</a>
-                                  </li>
-                                </ul>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td >24541</td>
-                            <td >
-                              <a class="text-dark" href=""> Hat Black Suits</a>
-                            </td>
-                            <td class="d-none d-lg-table-cell">1 Unit</td>
-                            <td class="d-none d-lg-table-cell">Nov 18, 2018</td>
-                            <td class="d-none d-lg-table-cell">$325</td>
-                            <td >
-                              <span class="badge badge-warning">On Hold</span>
-                            </td>
-                            <td class="text-right">
-                              <div class="dropdown show d-inline-block widget-dropdown">
-                                <a class="dropdown-toggle icon-burger-mini" href="#" role="button" id="dropdown-recent-order3" data-toggle="dropdown" aria-haspopup="true"
-                                  aria-expanded="false" data-display="static"></a>
-                                <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-recent-order3">
-                                  <li class="dropdown-item">
-                                    <a href="#">View</a>
-                                  </li>
-                                  <li class="dropdown-item">
-                                    <a href="#">Remove</a>
-                                  </li>
-                                </ul>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td >24541</td>
-                            <td >
-                              <a class="text-dark" href=""> Backpack Gents, Swimming Cap Slin</a>
-                            </td>
-                            <td class="d-none d-lg-table-cell">5 Units</td>
-                            <td class="d-none d-lg-table-cell">Dec 13, 2018</td>
-                            <td class="d-none d-lg-table-cell">$200</td>
-                            <td >
-                              <span class="badge badge-success">Completed</span>
-                            </td>
-                            <td class="text-right">
-                              <div class="dropdown show d-inline-block widget-dropdown">
-                                <a class="dropdown-toggle icon-burger-mini" href="#" role="button" id="dropdown-recent-order4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static"></a>
-                                <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-recent-order4">
-                                  <li class="dropdown-item">
-                                    <a href="#">View</a>
-                                  </li>
-                                  <li class="dropdown-item">
-                                    <a href="#">Remove</a>
-                                  </li>
-                                </ul>
-                              </div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td >24541</td>
-                            <td >
-                              <a class="text-dark" href=""> Speed 500 Ignite</a>
-                            </td>
-                            <td class="d-none d-lg-table-cell">1 Unit</td>
-                            <td class="d-none d-lg-table-cell">Dec 23, 2018</td>
-                            <td class="d-none d-lg-table-cell">$150</td>
-                            <td >
-                              <span class="badge badge-danger">Cancelled</span>
-                            </td>
-                            <td class="text-right">
-                              <div class="dropdown show d-inline-block widget-dropdown">
-                                <a class="dropdown-toggle icon-burger-mini" href="#" role="button" id="dropdown-recent-order5" data-toggle="dropdown" aria-haspopup="true"
-                                  aria-expanded="false" data-display="static"></a>
-                                <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-recent-order5">
-                                  <li class="dropdown-item">
-                                    <a href="#">View</a>
-                                  </li>
-                                  <li class="dropdown-item">
-                                    <a href="#">Remove</a>
-                                  </li>
-                                </ul>
-                              </div>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-</div>
-						</div>
+														<tr>
+															<td>Rhona</td>
+															<td>Davidson</td>
+															<td>Integration Specialist</td>
+															<td>Tokyo</td>
+															<td>55</td>
+															<td>2010/10/14</td>
+															<td>$327,900</td>
+															<td>6200</td>
+															<td>r.davidson@datatables.net</td>
+														</tr>
 
-						<div class="row">
-							<div class="col-xl-6"> 
-                  <!-- To Do list -->
-                  <div class="card card-default todo-table" id="todo" data-scroll-height="550">
-                    <div class="card-header justify-content-between">
-                      <h2>To Do List</h2>
-                      <a class="btn btn-primary btn-pill" id="add-task" href="#" role="button"> Add task </a>
-                    </div>
-                    <div class="card-body slim-scroll">
-                      <div class="todo-single-item d-none" id="todo-input">
-                        <form >
-                          <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Enter Todo" autofocus>
-                          </div>
-                        </form>
-                      </div>
-                      <div class="todo-list" id="todo-list">
-                        <div class="todo-single-item d-flex flex-row justify-content-between finished">
-                          <i class="mdi"></i>
-                          <span >Finish Dashboard UI Kit update</span>
-                          <span class="badge badge-primary">Finished</span>
-                        </div>
-                        <div class="todo-single-item d-flex flex-row justify-content-between current">
-                          <i class="mdi"></i>
-                          <span >Create new prototype for the landing page</span>
-                          <span class="badge badge-primary">Today</span>
-                        </div>
-                        <div class="todo-single-item d-flex flex-row justify-content-between ">
-                          <i class="mdi"></i>
-                          <span > Add new Google Analytics code to all main files </span>
-                          <span class="badge badge-danger">Yesterday</span>
-                        </div>
+														<tr>
+															<td>Colleen</td>
+															<td>Hurst</td>
+															<td>Javascript Developer</td>
+															<td>San Francisco</td>
+															<td>39</td>
+															<td>2009/09/15</td>
+															<td>$205,500</td>
+															<td>2360</td>
+															<td>c.hurst@datatables.net</td>
+														</tr>
 
-                        <div class="todo-single-item d-flex flex-row justify-content-between ">
-                          <i class="mdi"></i>
-                          <span >Update parallax scroll on team page</span>
-                          <span class="badge badge-success">Dec 15, 2018</span>
-                        </div>
+														<tr>
+															<td>Sonya</td>
+															<td>Frost</td>
+															<td>Software Engineer</td>
+															<td>Edinburgh</td>
+															<td>23</td>
+															<td>2008/12/13</td>
+															<td>$103,600</td>
+															<td>1667</td>
+															<td>s.frost@datatables.net</td>
+														</tr>
 
-                        <div class="todo-single-item d-flex flex-row justify-content-between ">
-                          <i class="mdi"></i>
-                          <span >Update parallax scroll on team page</span>
-                          <span class="badge badge-success">Dec 15, 2018</span>
-                        </div>
-                        <div class="todo-single-item d-flex flex-row justify-content-between ">
-                          <i class="mdi"></i>
-                          <span >Create online customer list book</span>
-                          <span class="badge badge-success">Dec 15, 2018</span>
-                        </div>
-                        <div class="todo-single-item d-flex flex-row justify-content-between ">
-                          <i class="mdi"></i>
-                          <span >Lorem ipsum dolor sit amet, consectetur.</span>
-                          <span class="badge badge-success">Dec 15, 2018</span>
-                        </div>
+														<tr>
+															<td>Jena</td>
+															<td>Gaines</td>
+															<td>Office Manager</td>
+															<td>London</td>
+															<td>30</td>
+															<td>2008/12/19</td>
+															<td>$90,560</td>
+															<td>3814</td>
+															<td>j.gaines@datatables.net</td>
+														</tr>
 
-                        <div class="todo-single-item d-flex flex-row justify-content-between mb-1">
-                          <i class="mdi"></i>
-                          <span >Update parallax scroll on team page</span>
-                          <span class="badge badge-success">Dec 15, 2018</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="mt-3"></div>
-                  </div>
-</div>
-							<div class="col-xl-6">
-                  <!-- area chart -->
-                  <div class="card card-default" >
-                    <div class="card-header d-block d-md-flex justify-content-between">
-                      <h2>World Wide Customer </h2>
-                      <div class="dropdown show d-inline-block widget-dropdown ml-auto">
-                        <a class="dropdown-toggle" href="#" role="button" id="world-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
-                          World Wide
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="world-dropdown">
-                          <li class="dropdown-item"><a href="#">Continetal chart</a></li>
-                          <li class="dropdown-item"><a href="#">Sub-continental</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="card-body vector-map-world">
-                      <div id="world" style="height: 100%; width: 100%;"></div>
-                    </div>
-                    <div class="card-footer d-flex flex-wrap bg-white p-0">
-                      <div class="col-6">
-                        <div class="p-4">
-                          <ul class="d-flex flex-column justify-content-between">
-                            <li class="mb-2"><i class="mdi mdi-checkbox-blank-circle-outline mr-2" style="color: #29cc97"></i>America <span class="float-right">5k</span></li>
-                            <li><i class="mdi mdi-checkbox-blank-circle-outline mr-2" style="color: #4c84ff "></i>Australia <span class="float-right">3k</span></li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div class="col-6">
-                        <div class="p-4 border-left">
-                          <ul class="d-flex flex-column justify-content-between">
-                            <li class="mb-2"><i class="mdi mdi-checkbox-blank-circle-outline mr-2" style="color: #ffa128"></i>Europe <span class="float-right">4k</span></li>
-                            <li><i class="mdi mdi-checkbox-blank-circle-outline mr-2" style="color: #fe5461"></i>Africa <span class="float-right">2k</span></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-</div>
-						</div>
+														<tr>
+															<td>Quinn</td>
+															<td>Flynn</td>
+															<td>Support Lead</td>
+															<td>Edinburgh</td>
+															<td>22</td>
+															<td>2013/03/03</td>
+															<td>$342,000</td>
+															<td>9497</td>
+															<td>q.flynn@datatables.net</td>
+														</tr>
 
-						<div class="row">
-							<div class="col-xl-5">
-                  <!-- New Customers -->
-                  <div class="card card-table-border-none"  data-scroll-height="580">
-                    <div class="card-header justify-content-between ">
-                      <h2>New Customers</h2>
-                      <div>
-                          <button class="text-black-50 mr-2 font-size-20">
-                            <i class="mdi mdi-cached"></i>
-                          </button>
-                          <div class="dropdown show d-inline-block widget-dropdown">
-                              <a class="dropdown-toggle icon-burger-mini" href="#" role="button" id="dropdown-customar"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
-                              </a>
-                              <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-customar">
-                                <li class="dropdown-item"><a  href="#">Action</a></li>
-                                <li class="dropdown-item"><a  href="#">Another action</a></li>
-                                <li class="dropdown-item"><a  href="#">Something else here</a></li>
-                              </ul>
-                            </div>
-                      </div>
-                    </div>
-                    <div class="card-body pt-0">
-                      <table class="table ">
-                        <tbody>
-                          <tr>
-                            <td >
-                              <div class="media">
-                                <div class="media-image mr-3 rounded-circle">
-                                  <a href="profile.html"><img class="rounded-circle w-45" src="assets/img/user/u1.jpg" alt="customer image"></a>
-                                </div>
-                                <div class="media-body align-self-center">
-                                  <a href="profile.html"><h6 class="mt-0 text-dark font-weight-medium">Selena Wagner</h6></a>
-                                  <small>@selena.oi</small>
-                                </div>
-                              </div>
-                            </td>
-                            <td >2 Orders</td>
-                            <td class="text-dark d-none d-md-block">$150</td>
-                          </tr>
-                          <tr>
-                            <td >
-                              <div class="media">
-                                <div class="media-image mr-3 rounded-circle">
-                                  <a href="profile.html"><img class="rounded-circle w-45" src="assets/img/user/u2.jpg" alt="customer image"></a>
-                                </div>
-                                <div class="media-body align-self-center">
-                                  <a href="profile.html"><h6 class="mt-0 text-dark font-weight-medium">Walter Reuter</h6></a>
-                                  <small>@walter.me</small>
-                                </div>
-                              </div>
-                            </td>
-                            <td >5 Orders</td>
-                            <td class="text-dark d-none d-md-block">$200</td>
-                          </tr>
-                          <tr>
-                            <td >
-                              <div class="media">
-                                <div class="media-image mr-3 rounded-circle">
-                                  <a href="profile.html"><img class="rounded-circle w-45" src="assets/img/user/u3.jpg" alt="customer image"></a>
-                                </div>
-                                <div class="media-body align-self-center">
-                                  <a href="profile.html"><h6 class="mt-0 text-dark font-weight-medium">Larissa Gebhardt</h6></a>
-                                  <small>@larissa.gb</small>
-                                </div>
-                              </div>
-                            </td>
-                            <td >1 Order</td>
-                            <td class="text-dark d-none d-md-block">$50</td>
-                          </tr>
-                          <tr>
-                            <td >
-                              <div class="media">
-                                <div class="media-image mr-3 rounded-circle">
-                                  <a href="profile.html"><img class="rounded-circle w-45" src="assets/img/user/u4.jpg" alt="customer image"></a>
-                                </div>
-                                <div class="media-body align-self-center">
-                                  <a href="profile.html"><h6 class="mt-0 text-dark font-weight-medium">Albrecht Straub</h6></a>
-                                  <small>@albrech.as</small>
-                                </div>
-                              </div>
-                            </td>
-                            <td >2 Orders</td>
-                            <td class="text-dark d-none d-md-block">$100</td>
-                          </tr>
-                          <tr>
-                            <td >
-                              <div class="media">
-                                <div class="media-image mr-3 rounded-circle">
-                                  <a href="profile.html"><img class="rounded-circle w-45" src="assets/img/user/u5.jpg" alt="customer image"></a>
-                                </div>
-                                <div class="media-body align-self-center">
-                                  <a href="profile.html"><h6 class="mt-0 text-dark font-weight-medium">Leopold Ebert</h6></a>
-                                  <small>@leopold.et</small>
-                                </div>
-                              </div>
-                            </td>
-                            <td >1 Order</td>
-                            <td class="text-dark d-none d-md-block">$60</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-</div>
-							<div class="col-xl-7">
-                  <!-- Top Products -->
-                  <div class="card card-default" data-scroll-height="580">
-                    <div class="card-header justify-content-between mb-4">
-                      <h2>Top Products</h2>
-                      <div>
-                          <button class="text-black-50 mr-2 font-size-20"><i class="mdi mdi-cached"></i></button>
-                          <div class="dropdown show d-inline-block widget-dropdown">
-                              <a class="dropdown-toggle icon-burger-mini" href="#" role="button" id="dropdown-product" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
-                              </a>
-                              <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-product">
-                                <li class="dropdown-item"><a  href="#">Update Data</a></li>
-                                <li class="dropdown-item"><a  href="#">Detailed Log</a></li>
-                                <li class="dropdown-item"><a  href="#">Statistics</a></li>
-                                <li class="dropdown-item"><a  href="#">Clear Data</a></li>
-                              </ul>
-                            </div>
-                      </div>
+														<tr>
+															<td>Charde</td>
+															<td>Marshall</td>
+															<td>Regional Director</td>
+															<td>San Francisco</td>
+															<td>36</td>
+															<td>2008/10/16</td>
+															<td>$470,600</td>
+															<td>6741</td>
+															<td>c.marshall@datatables.net</td>
+														</tr>
 
-                    </div>
-                    <div class="card-body py-0">
-                      <div class="media d-flex mb-5">
-                        <div class="media-image align-self-center mr-3 rounded">
-                          <a href="#"><img src="assets/img/products/p1.jpg" alt="customer image"></a>
-                        </div>
-                        <div class="media-body align-self-center">
-                          <a href="#"><h6 class="mb-3 text-dark font-weight-medium"> Coach Swagger</h6></a>
-                          <p class="float-md-right"><span class="text-dark mr-2">20</span>Sales</p>
-                          <p class="d-none d-md-block">Statement belting with double-turnlock hardware adds “swagger” to a simple.</p>
-                          <p class="mb-0">
-                            <del>$300</del>
-                            <span class="text-dark ml-3">$250</span>
-                          </p>
-                        </div>
-                      </div>
+														<tr>
+															<td>Haley</td>
+															<td>Kennedy</td>
+															<td>Senior Marketing Designer</td>
+															<td>London</td>
+															<td>43</td>
+															<td>2012/12/18</td>
+															<td>$313,500</td>
+															<td>3597</td>
+															<td>h.kennedy@datatables.net</td>
+														</tr>
 
-                      <div class="media d-flex mb-5">
-                        <div class="media-image align-self-center mr-3 rounded">
-                          <a href="#"><img src="assets/img/products/p2.jpg" alt="customer image"></a>
-                        </div>
-                        <div class="media-body align-self-center">
-                          <a href="#"><h6 class="mb-3 text-dark font-weight-medium"> Coach Swagger</h6></a>
-                          <p class="float-md-right"><span class="text-dark mr-2">20</span>Sales</p>
-                          <p class="d-none d-md-block">Statement belting with double-turnlock hardware adds “swagger” to a simple.</p>
-                          <p class="mb-0">
-                            <del>$300</del>
-                            <span class="text-dark ml-3">$250</span>
-                          </p>
-                        </div>
-                      </div>
+														<tr>
+															<td>Tatyana</td>
+															<td>Fitzpatrick</td>
+															<td>Regional Director</td>
+															<td>London</td>
+															<td>19</td>
+															<td>2010/03/17</td>
+															<td>$385,750</td>
+															<td>1965</td>
+															<td>t.fitzpatrick@datatables.net</td>
+														</tr>
 
-                      <div class="media d-flex mb-5">
-                        <div class="media-image align-self-center mr-3 rounded">
-                          <a href="#"><img src="assets/img/products/p3.jpg" alt="customer image"></a>
-                        </div>
-                        <div class="media-body align-self-center">
-                          <a href="#"><h6 class="mb-3 text-dark font-weight-medium"> Gucci Watch</h6></a>
-                          <p class="float-md-right"><span class="text-dark mr-2">10</span>Sales</p>
-                          <p class="d-none d-md-block">Statement belting with double-turnlock hardware adds “swagger” to a simple.</p>
-                          <p class="mb-0">
-                            <del>$300</del>
-                            <span class="text-dark ml-3">$50</span>
-                          </p>
-                        </div>
-                      </div>
-                      </div>
-                  </div>
-</div>
-						</div>
+														<tr>
+															<td>Michael</td>
+															<td>Silva</td>
+															<td>Marketing Designer</td>
+															<td>London</td>
+															<td>66</td>
+															<td>2012/11/27</td>
+															<td>$198,500</td>
+															<td>1581</td>
+															<td>m.silva@datatables.net</td>
+														</tr>
+
+														<tr>
+															<td>Paul</td>
+															<td>Byrd</td>
+															<td>Chief Financial Officer (CFO)</td>
+															<td>New York</td>
+															<td>64</td>
+															<td>2010/06/09</td>
+															<td>$725,000</td>
+															<td>3059</td>
+															<td>p.byrd@datatables.net</td>
+														</tr>
+
+														<tr>
+															<td>Gloria</td>
+															<td>Little</td>
+															<td>Systems Administrator</td>
+															<td>New York</td>
+															<td>59</td>
+															<td>2009/04/10</td>
+															<td>$237,500</td>
+															<td>1721</td>
+															<td>g.little@datatables.net</td>
+														</tr>
+
+														<tr>
+															<td>Bradley</td>
+															<td>Greer</td>
+															<td>Software Engineer</td>
+															<td>London</td>
+															<td>41</td>
+															<td>2012/10/13</td>
+															<td>$132,000</td>
+															<td>2558</td>
+															<td>b.greer@datatables.net</td>
+														</tr>
+
+														<tr>
+															<td>Dai</td>
+															<td>Rios</td>
+															<td>Personnel Lead</td>
+															<td>Edinburgh</td>
+															<td>35</td>
+															<td>2012/09/26</td>
+															<td>$217,500</td>
+															<td>2290</td>
+															<td>d.rios@datatables.net</td>
+														</tr>
+
+														<tr>
+															<td>Jenette</td>
+															<td>Caldwell</td>
+															<td>Development Lead</td>
+															<td>New York</td>
+															<td>30</td>
+															<td>2011/09/03</td>
+															<td>$345,000</td>
+															<td>1937</td>
+															<td>j.caldwell@datatables.net</td>
+														</tr>
+
+														<tr>
+															<td>Yuri</td>
+															<td>Berry</td>
+															<td>Chief Marketing Officer (CMO)</td>
+															<td>New York</td>
+															<td>40</td>
+															<td>2009/06/25</td>
+															<td>$675,000</td>
+															<td>6154</td>
+															<td>y.berry@datatables.net</td>
+														</tr>
+
+														<tr>
+															<td>Caesar</td>
+															<td>Vance</td>
+															<td>Pre-Sales Support</td>
+															<td>New York</td>
+															<td>21</td>
+															<td>2011/12/12</td>
+															<td>$106,450</td>
+															<td>8330</td>
+															<td>c.vance@datatables.net</td>
+														</tr>
+
+														<tr>
+															<td>Doris</td>
+															<td>Wilder</td>
+															<td>Sales Assistant</td>
+															<td>Sidney</td>
+															<td>23</td>
+															<td>2010/09/20</td>
+															<td>$85,600</td>
+															<td>3023</td>
+															<td>d.wilder@datatables.net</td>
+														</tr>
+
+														<tr>
+															<td>Angelica</td>
+															<td>Ramos</td>
+															<td>Chief Executive Officer (CEO)</td>
+															<td>London</td>
+															<td>47</td>
+															<td>2009/10/09</td>
+															<td>$1,200,000</td>
+															<td>5797</td>
+															<td>a.ramos@datatables.net</td>
+														</tr>
+
+														<tr>
+															<td>Gavin</td>
+															<td>Joyce</td>
+															<td>Developer</td>
+															<td>Edinburgh</td>
+															<td>42</td>
+															<td>2010/12/22</td>
+															<td>$92,575</td>
+															<td>8822</td>
+															<td>g.joyce@datatables.net</td>
+														</tr>
+
+														<tr>
+															<td>Jennifer</td>
+															<td>Chang</td>
+															<td>Regional Director</td>
+															<td>Singapore</td>
+															<td>28</td>
+															<td>2010/11/14</td>
+															<td>$357,650</td>
+															<td>9239</td>
+															<td>j.chang@datatables.net</td>
+														</tr>
+
+														<tr>
+															<td>Brenden</td>
+															<td>Wagner</td>
+															<td>Software Engineer</td>
+															<td>San Francisco</td>
+															<td>28</td>
+															<td>2011/06/07</td>
+															<td>$206,850</td>
+															<td>1314</td>
+															<td>b.wagner@datatables.net</td>
+														</tr>
+
+														<tr>
+															<td>Fiona</td>
+															<td>Green</td>
+															<td>Chief Operating Officer (COO)</td>
+															<td>San Francisco</td>
+															<td>48</td>
+															<td>2010/03/11</td>
+															<td>$850,000</td>
+															<td>2947</td>
+															<td>f.green@datatables.net</td>
+														</tr>
+
+														<tr>
+															<td>Shou</td>
+															<td>Itou</td>
+															<td>Regional Marketing</td>
+															<td>Tokyo</td>
+															<td>20</td>
+															<td>2011/08/14</td>
+															<td>$163,000</td>
+															<td>8899</td>
+															<td>s.itou@datatables.net</td>
+														</tr>
+
+														<tr>
+															<td>Michelle</td>
+															<td>House</td>
+															<td>Integration Specialist</td>
+															<td>Sidney</td>
+															<td>37</td>
+															<td>2011/06/02</td>
+															<td>$95,400</td>
+															<td>2769</td>
+															<td>m.house@datatables.net</td>
+														</tr>
+
+														<tr>
+															<td>Suki</td>
+															<td>Burks</td>
+															<td>Developer</td>
+															<td>London</td>
+															<td>53</td>
+															<td>2009/10/22</td>
+															<td>$114,500</td>
+															<td>6832</td>
+															<td>s.burks@datatables.net</td>
+														</tr>
+
+														<tr>
+															<td>Prescott</td>
+															<td>Bartlett</td>
+															<td>Technical Author</td>
+															<td>London</td>
+															<td>27</td>
+															<td>2011/05/07</td>
+															<td>$145,000</td>
+															<td>3606</td>
+															<td>p.bartlett@datatables.net</td>
+														</tr>
+
+														<tr>
+															<td>Gavin</td>
+															<td>Cortez</td>
+															<td>Team Leader</td>
+															<td>San Francisco</td>
+															<td>22</td>
+															<td>2008/10/26</td>
+															<td>$235,500</td>
+															<td>2860</td>
+															<td>g.cortez@datatables.net</td>
+														</tr>
+
+														<tr>
+															<td>Martena</td>
+															<td>Mccray</td>
+															<td>Post-Sales support</td>
+															<td>Edinburgh</td>
+															<td>46</td>
+															<td>2011/03/09</td>
+															<td>$324,050</td>
+															<td>8240</td>
+															<td>m.mccray@datatables.net</td>
+														</tr>
+
+														<tr>
+															<td>Unity</td>
+															<td>Butler</td>
+															<td>Marketing Designer</td>
+															<td>San Francisco</td>
+															<td>47</td>
+															<td>2009/12/09</td>
+															<td>$85,675</td>
+															<td>5384</td>
+															<td>u.butler@datatables.net</td>
+														</tr>
+														
+														<tr>
+															<td>Howard</td>
+															<td>Hatfield</td>
+															<td>Office Manager</td>
+															<td>San Francisco</td>
+															<td>51</td>
+															<td>2008/12/16</td>
+															<td>$164,500</td>
+															<td>7031</td>
+															<td>h.hatfield@datatables.net</td>
+														</tr>
+
+														<tr>
+															<td>Hope</td>
+															<td>Fuentes</td>
+															<td>Secretary</td>
+															<td>San Francisco</td>
+															<td>41</td>
+															<td>2010/02/12</td>
+															<td>$109,850</td>
+															<td>6318</td>
+															<td>h.fuentes@datatables.net</td>
+														</tr>
+
+														<tr>
+															<td>Vivian</td>
+															<td>Harrell</td>
+															<td>Financial Controller</td>
+															<td>San Francisco</td>
+															<td>62</td>
+															<td>2009/02/14</td>
+															<td>$452,500</td>
+															<td>9422</td>
+															<td>v.harrell@datatables.net</td>
+														</tr>
+
+														<tr>
+															<td>Timothy</td>
+															<td>Mooney</td>
+															<td>Office Manager</td>
+															<td>London</td>
+															<td>37</td>
+															<td>2008/12/11</td>
+															<td>$136,200</td>
+															<td>7580</td>
+															<td>t.mooney@datatables.net</td>
+														</tr>
+
+														<tr>
+															<td>Jackson</td>
+															<td>Bradshaw</td>
+															<td>Director</td>
+															<td>New York</td>
+															<td>65</td>
+															<td>2008/09/26</td>
+															<td>$645,750</td>
+															<td>1042</td>
+															<td>j.bradshaw@datatables.net</td>
+														</tr>
+
+														<tr>
+															<td>Olivia</td>
+															<td>Liang</td>
+															<td>Support Engineer</td>
+															<td>Singapore</td>
+															<td>64</td>
+															<td>2011/02/03</td>
+															<td>$234,500</td>
+															<td>2120</td>
+															<td>o.liang@datatables.net</td>
+														</tr>
+
+														<tr>
+															<td>Bruno</td>
+															<td>Nash</td>
+															<td>Software Engineer</td>
+															<td>London</td>
+															<td>38</td>
+															<td>2011/05/03</td>
+															<td>$163,500</td>
+															<td>6222</td>
+															<td>b.nash@datatables.net</td>
+														</tr>
+
+														<tr>
+															<td>Sakura</td>
+															<td>Yamamoto</td>
+															<td>Support Engineer</td>
+															<td>Tokyo</td>
+															<td>37</td>
+															<td>2009/08/19</td>
+															<td>$139,575</td>
+															<td>9383</td>
+															<td>s.yamamoto@datatables.net</td>
+														</tr>
+
+														<tr>
+															<td>Thor</td>
+															<td>Walton</td>
+															<td>Developer</td>
+															<td>New York</td>
+															<td>61</td>
+															<td>2013/08/11</td>
+															<td>$98,540</td>
+															<td>8327</td>
+															<td>t.walton@datatables.net</td>
+														</tr>
+
+														<tr>
+															<td>Finn</td>
+															<td>Camacho</td>
+															<td>Support Engineer</td>
+															<td>San Francisco</td>
+															<td>47</td>
+															<td>2009/07/07</td>
+															<td>$87,500</td>
+															<td>2927</td>
+															<td>f.camacho@datatables.net</td>
+														</tr>
+
+														<tr>
+															<td>Serge</td>
+															<td>Baldwin</td>
+															<td>Data Coordinator</td>
+															<td>Singapore</td>
+															<td>64</td>
+															<td>2012/04/09</td>
+															<td>$138,575</td>
+															<td>8352</td>
+															<td>s.baldwin@datatables.net</td>
+														</tr>
+
+														<tr>
+															<td>Zenaida</td>
+															<td>Frank</td>
+															<td>Software Engineer</td>
+															<td>New York</td>
+															<td>63</td>
+															<td>2010/01/04</td>
+															<td>$125,250</td>
+															<td>7439</td>
+															<td>z.frank@datatables.net</td>
+														</tr>
+
+														<tr>
+															<td>Zorita</td>
+															<td>Serrano</td>
+															<td>Software Engineer</td>
+															<td>San Francisco</td>
+															<td>56</td>
+															<td>2012/06/01</td>
+															<td>$115,000</td>
+															<td>4389</td>
+															<td>z.serrano@datatables.net</td>
+														</tr>
+														
+														<tr>
+															<td>Jennifer</td>
+															<td>Acosta</td>
+															<td>Junior Javascript Developer</td>
+															<td>Edinburgh</td>
+															<td>43</td>
+															<td>2013/02/01</td>
+															<td>$75,650</td>
+															<td>3431</td>
+															<td>j.acosta@datatables.net</td>
+														</tr>
+
+														<tr>
+															<td>Cara</td>
+															<td>Stevens</td>
+															<td>Sales Assistant</td>
+															<td>New York</td>
+															<td>46</td>
+															<td>2011/12/06</td>
+															<td>$145,600</td>
+															<td>3990</td>
+															<td>c.stevens@datatables.net</td>
+														</tr>
+
+														<tr>
+															<td>Hermione</td>
+															<td>Butler</td>
+															<td>Regional Director</td>
+															<td>London</td>
+															<td>47</td>
+															<td>2011/03/21</td>
+															<td>$356,250</td>
+															<td>1016</td>
+															<td>h.butler@datatables.net</td>
+														</tr>
+
+														<tr>
+															<td>Lael</td>
+															<td>Greer</td>
+															<td>Systems Administrator</td>
+															<td>London</td>
+															<td>21</td>
+															<td>2009/02/27</td>
+															<td>$103,500</td>
+															<td>6733</td>
+															<td>l.greer@datatables.net</td>
+														</tr>
+
+														<tr>
+															<td>Jonas</td>
+															<td>Alexander</td>
+															<td>Developer</td>
+															<td>San Francisco</td>
+															<td>30</td>
+															<td>2010/07/14</td>
+															<td>$86,500</td>
+															<td>8196</td>
+															<td>j.alexander@datatables.net</td>
+														</tr>
+
+														<tr>
+															<td>Shad</td>
+															<td>Decker</td>
+															<td>Regional Director</td>
+															<td>Edinburgh</td>
+															<td>51</td>
+															<td>2008/11/13</td>
+															<td>$183,000</td>
+															<td>6373</td>
+															<td>s.decker@datatables.net</td>
+														</tr>
+
+														<tr>
+															<td>Michael</td>
+															<td>Bruce</td>
+															<td>Javascript Developer</td>
+															<td>Singapore</td>
+															<td>29</td>
+															<td>2011/06/27</td>
+															<td>$183,000</td>
+															<td>5384</td>
+															<td>m.bruce@datatables.net</td>
+														</tr>
+
+														<tr>
+															<td>Donna</td>
+															<td>Snider</td>
+															<td>Customer Support</td>
+															<td>New York</td>
+															<td>27</td>
+															<td>2011/01/25</td>
+															<td>$112,000</td>
+															<td>4226</td>
+															<td>d.snider@datatables.net</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-lg-12">
+									<div class="card card-default">
+										<div class="card-header card-header-border-bottom d-flex justify-content-between">
+											<h2>How to use</h2>
+
+											<a href="https://codepen.io/iamabdus/pen/dyyarez" target="_blank" class="btn btn-outline-primary btn-sm text-uppercase">
+												<i class="mdi mdi-codepen mr-1"></i> Open with codepen
+											</a>
+										</div>
+
+										<div class="card-body">
+											<ul class="nav nav-tabs" id="myTab" role="tablist">
+												<li class="nav-item">
+													<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Javascript</a>
+												</li>
+												<li class="nav-item">
+													<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">HTML</a>
+												</li>
+												<li class="nav-item">
+													<a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">CSS</a>
+												</li>
+											</ul>
+											<div class="tab-content" id="myTabContent1">
+												<div class="tab-pane pt-3 fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+<pre class="mt-4 pre-code">
+  jQuery(document).ready(function() {
+   jQuery('#basic-data-table').DataTable({
+    "dom": '&lt;"row justify-content-between top-information"lf&gt;rt&lt;"row justify-content-between bottom-information"ip>&lt;"clear"&gt;'
+   });
+  });
+</pre>
+
+<pre class="mt-4">
+<code>&lt;script src="assets/plugins/data-tables/jquery.datatables.min.js"&gt;&lt;/script&gt;</code>
+<code>&lt;script src="assets/plugins/data-tables/datatables.bootstrap4.min.js"&gt;&lt;/script&gt;</code>
+</pre>
+												</div>
+
+												<div class="tab-pane pt-3 fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+<pre class="mt-4">
+ &lt;table id="basic-data-table" class="table nowrap" style="width:100%"&gt;
+  &lt;thead&gt;
+   &lt;tr&gt;
+    &lt;th&gt;First name&lt;/th&gt;
+    &lt;th&gt;Last name&lt;/th&gt;
+    &lt;th&gt;Position&lt;/th&gt;
+    &lt;th&gt;Office&lt;/th&gt;
+    &lt;th&gt;Age&lt;/th&gt;
+    &lt;th&gt;Start date&lt;/th&gt;
+    &lt;th&gt;Salary&lt;/th&gt;
+    &lt;th&gt;Extn.&lt;/th&gt;
+    &lt;th&gt;E-mail&lt;/th&gt;
+   &lt;/tr&gt;
+  &lt;/thead&gt;
+
+  &lt;tbody&gt;
+   &lt;tr&gt;
+    &lt;td&gt;Tiger&lt;/td&gt;
+    &lt;td&gt;Nixon&lt;/td&gt;
+    &lt;td&gt;System Architect&lt;/td&gt;
+    &lt;td&gt;Edinburgh&lt;/td&gt;
+    &lt;td&gt;61&lt;/th&gt;
+    &lt;td&gt;2011/04/25&lt;/td&gt;
+    &lt;td&gt;$320,800&lt;/td&gt;
+    &lt;th&gt;5421&lt;/td&gt;
+    &lt;td&gt;t.nixon@datatables.net&lt;/td&gt;
+   &lt;/tr&gt;
+  &lt;/tbody&gt;
+ &lt;/table&gt;
+</pre>
+												</div>
+
+												<div class="tab-pane pt-3 fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+<pre class="mt-4">
+<code>&lt;link href="assets/plugins/data-tables/datatables.bootstrap4.min.css" rel="stylesheet"&gt;</code>
+<code>&lt;link href=""https://unpkg.com/sleek-dashboard/dist/assets/css/sleek.min.css"&gt;</code>
+</pre>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
 </div>
 
         
@@ -1992,15 +2068,6 @@
 
 
 
-<script src="assets/plugins/charts/Chart.min.js"></script>
-  
-
-
-<script src="assets/plugins/jvectormap/jquery-jvectormap-2.0.3.min.js"></script>
-<script src="assets/plugins/jvectormap/jquery-jvectormap-world-mill.js"></script>
-  
-
-
 <script src="assets/plugins/daterangepicker/moment.min.js"></script>
 <script src="assets/plugins/daterangepicker/daterangepicker.js"></script>
 <script>
@@ -2023,8 +2090,19 @@
   
 
 
-<script src="assets/plugins/toastr/toastr.min.js"></script>
+<script src="assets/plugins/data-tables/jquery.datatables.min.js"></script>
+<script src="assets/plugins/data-tables/datatables.bootstrap4.min.js"></script>
+  
 
+
+<script>
+  jQuery(document).ready(function() {
+    jQuery('#basic-data-table').DataTable({
+      "dom": '<"row justify-content-between top-information"lf>rt<"row justify-content-between bottom-information"ip><"clear">'
+    });
+  });
+</script>
+  
 
 
 <script src="assets/js/sleek.bundle.js"></script>
