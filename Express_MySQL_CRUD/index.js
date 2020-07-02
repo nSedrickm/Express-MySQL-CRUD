@@ -8,9 +8,9 @@ const app = express();
 
 const connection = mysql.createConnection({
     host: 'localhost',
-    user: '****',
-    password: '****',
-    database: '****'
+    user: 'raider',
+    password: 'raider_dev',
+    database: 'inventory_development'
 });
 
 connection.connect((err) => {
@@ -24,13 +24,17 @@ app.set('views',path.join(__dirname,'views'));
 app.set('view engine', 'hbs');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use('/assets',express.static(__dirname + '/public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 //route for homepage
 app.get('/',(req, res) => {
-    let sql = "SELECT * FROM ****";
+    let sql = "SELECT * FROM Products";
     let query = connection.query(sql, (err, data) => {
-      if(err) throw err;
+      if(err) {
+        res.render('error');
+        throw err;
+      }
+
       res.render('index',{
         data: data
       });

@@ -1,0 +1,29 @@
+<div class="container-fluid p-5">
+    <div class="row">
+        {{#each data}}
+        <div class="col-md-4 mb-5">
+            <div class="card shadow">
+                <div class="card-header bg-danger text-light">
+                    Pkg
+                </div>
+                <div class="card-body">
+                    <dl class="row">
+                        <dt class="col-4">ID</dt>
+                        <dd class="col-8">{{ data }}</dd>
+                        <dt class="col-4">REQ_ID</dt>
+                        <dd class="col-8">{{ data}}</dd>
+                        <dt class="col-4">MESSAGE</dt>
+                        <dd class="col-8">{{ data }}</dd>
+                        <dt class="col-4">PHONENUMBER</dt>
+                        <dd class="col-8">{{ data }}</dd>
+                        <dt class="col-4">DATE</dt>
+                        <dd class="col-8">{{ data }}</dd>
+                        <dt class="col-4">STATUS</dt>
+                        <dd class="col-8"> <span class="badge badge-danger">{{ data }}</span></dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
