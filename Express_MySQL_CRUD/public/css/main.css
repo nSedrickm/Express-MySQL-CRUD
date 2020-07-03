@@ -1,0 +1,36 @@
+body {
+    background: #603813; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #b29f94, #603813); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+        to right,
+        #ffffff,
+        #b29f94
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.bg-header {
+    background: #c21500; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ffc500, #c21500); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+        to right,
+        #ffc500,
+        #c21500
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.bg-image {
+    background-image: url("/img/background.jpg");
+    background-repeat: no-repeat;
+    background-position: center right;
+}
+
+.transparent {
+    background: transparent !important;
+}
+
+.darken {
+    filter: brightness(80%);
+}
+
+dt,
+dd {
+    font-weight: lighter !important;
+}
