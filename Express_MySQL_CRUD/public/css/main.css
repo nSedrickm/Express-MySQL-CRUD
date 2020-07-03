@@ -12,8 +12,8 @@ body {
     background: -webkit-linear-gradient(to right, #ffc500, #c21500); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(
         to right,
-        #ffc500,
-        #c21500
+        #c21500,
+        #ffc500
     ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .bg-image {
@@ -30,7 +30,6 @@ body {
     filter: brightness(80%);
 }
 
-dt,
 dd {
     font-weight: lighter !important;
 }

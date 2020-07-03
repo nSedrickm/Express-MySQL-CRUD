@@ -2,25 +2,23 @@
     <h1 class="font-weight-bold mb-5">MESSAGE LOGS</h1>
     <div class="row">
         {{#each data}}
-        <div class="col-md-4 mb-5">
+        <div class="col-md-6 mb-5">
             <div class="card shadow border-0 bg-image ">
                 <div class="card-header  bg-header text-light">
                     Pkg
                 </div>
                 <div class="card-body text-light font-weight-light">
                     <dl class="row">
-                        <dt class="col-4">ID</dt>
-                        <dd class="col-8">{{ data }}</dd>
-                        <dt class="col-4">REQ_ID</dt>
-                        <dd class="col-8">{{ data}}</dd>
-                        <dt class="col-4">MESSAGE</dt>
-                        <dd class="col-8">{{ data }}</dd>
+                        <dt class="col-4">IMEI</dt>
+                        <dd class="col-8">{{ IMEI }}</dd>
+                        <dt class="col-4">ISP</dt>
+                        <dd class="col-8">{{ ISP }}</dd>
                         <dt class="col-4">PHONENUMBER</dt>
-                        <dd class="col-8">{{ data }}</dd>
+                        <dd class="col-8">{{ PHONENUMBER }}</dd>
+                        <dt class="col-4">MESSAGE</dt>
+                        <dd class="col-8">{{ MESSAGE }}</dd>
                         <dt class="col-4">DATE</dt>
-                        <dd class="col-8">{{ data }}</dd>
-                        <dt class="col-4">STATUS</dt>
-                        <dd class="col-8"> <span class="badge badge-danger">{{ data }}</span></dd>
+                        <dd class="col-8">{{ DATE }}</dd>
                     </dl>
                 </div>
             </div>
