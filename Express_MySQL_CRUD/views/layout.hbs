@@ -10,6 +10,7 @@
     <title>{{title}}</title>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/Chart.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
     <link rel="stylesheet" href="/css/main.css">
 </head>
 
@@ -45,9 +46,61 @@
         </div>
     </nav>
     <main>
-        <div class="container-fluid">
+        <div class="container-fluid p-0">
             <div class="row no-gutters">
-                <div class="col-md-12">
+                <div class="col-md-2 d-none d-md-block" id="side_nav">
+                    <div class="row no-gutters">
+                        <div class="transparent">
+                            <ul class="nav flex-column">
+                                <li class="nav-item py-2 text-center">
+                                    <a class="nav-link" href="#"><i class="fas fa-tv"></i></a>
+                                </li>
+                                <li class="nav-item py-2">
+                                    <a class="nav-link" href="#"><i class="fas fa-clinic-medical"></i></a>
+                                </li>
+                                <li class="nav-item py-2">
+                                    <a class="nav-link" href="#"><i class="fas fa-door-open"></i></a>
+                                </li>
+                                <li class="nav-item py-2">
+                                    <a class="nav-link" href="#"><i class="fas fa-bed"></i></a>
+                                </li>
+                                <li class="nav-item py-2">
+                                    <a class="nav-link" href="#"><i class="fas fa-question-circle"></i></a>
+                                </li>
+                                <li class="nav-item py-2">
+                                    <a class="nav-link" href="#"><i class="fas fa-cog"></i></a>
+                                </li>
+
+
+                            </ul>
+                        </div>
+                        <div class="col-8 bg-white">
+                            <ul class="nav flex-column">
+                                <li class="nav-item py-2">
+                                    <a class="nav-link" href="#">Laboratory</a>
+                                </li>
+                                <li class="nav-item py-2">
+                                    <a class="nav-link" href="#">Clinic</a>
+                                </li>
+                                <li class="nav-item py-2">
+                                    <a class="nav-link" href="#">Doctor</a>
+                                </li>
+                                <li class="nav-item py-2">
+                                    <a class="nav-link" href="#">Down</a>
+                                </li>
+                                <li class="nav-item py-2">
+                                    <a class="nav-link" href="#">Clinic</a>
+                                </li>
+                                <li class="nav-item py-2">
+                                    <a class="nav-link" href="#">Settings</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-10">
                     {{{body}}}
                 </div>
             </div>

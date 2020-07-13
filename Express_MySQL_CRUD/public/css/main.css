@@ -54,3 +54,9 @@ dd {
 .rounded-lg {
     border-radius: 1.5rem !important;
 }
+#side_nav .nav-link {
+    color: rgb(44, 41, 41) !important;
+}
+#side_nav .nav-link i {
+    font-size: 1.33em;
+}
