@@ -28,6 +28,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //route for homepage
 app.get('/', (req, res) => {
+  res.render('home');
+});
+//route for sms logs
+app.get('/sms-logs', (req, res) => {
   let sql = "SELECT * FROM MODEM_SMS_RECEIVED";
   let query = connection.query(sql, (err, data) => {
     if (err) {

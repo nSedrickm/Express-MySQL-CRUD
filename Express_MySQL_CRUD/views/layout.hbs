@@ -7,14 +7,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 
-    <title>LOGS</title>
+    <title>Dasboard</title>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/main.css">
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white px-5 py-4 shadow ">
+        <a class="navbar-brand" href="/">Check TB CM</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto mx-auto">
+                <li class="nav-item active">
+                    <a class="nav-link px-4 " href="#">Registered <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link px-4 " href="#">BAC+ TB</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link px-4 " href="#">Xpert Result</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link px-4 " href="#">HIV+</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link px-4 " href="/sms-logs">Message Logs</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <button class="btn btn-success my-2 my-sm-0" type="submit">Contact Support</button>
+            </form>
+        </div>
+    </nav>
     <main>
-        {{{body}}}
+        <div class="container-fluid">
+            <div class="row no-gutters">
+                <div class="col-md-12">
+                    {{{body}}}
+                </div>
+            </div>
+        </div>
     </main>
 </body>
 
