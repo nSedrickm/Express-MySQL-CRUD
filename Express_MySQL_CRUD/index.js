@@ -28,7 +28,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //route for homepage
 app.get('/', (req, res) => {
-  res.render('home');
+  res.render('home', {
+    title: "Dashboard - Home"
+  });
 });
 //route for sms logs
 app.get('/sms-logs', (req, res) => {
@@ -40,7 +42,8 @@ app.get('/sms-logs', (req, res) => {
     }
 
     res.render('index', {
-      data: data
+      data: data,
+      title: "message logs"
     });
   });
 });

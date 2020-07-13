@@ -1,7 +1,24 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Poppins|Play|Raleway&display=swap");
+
 body {
     background: #603813; /* fallback for old browsers */
     background: linear-gradient(to right, #ffffff, #b29f94);
+    font-family: "Open Sans";
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Raleway";
+}
+
+.nav-link {
+    font-family: "Play", sans-serif;
+}
+
 .bg-header {
     background: linear-gradient(to right, #c21500, #ffc500);
 }
@@ -24,12 +41,16 @@ dd {
     font-weight: lighter !important;
 }
 
-.card {
+.card_dual_border {
     border-radius: 15px 50px !important;
 }
 .card:hover {
     cursor: pointer;
 }
-.card-header {
+.card_dual_border .card-header {
     border-radius: 15px 50px 0 0 !important;
+}
+
+.rounded-lg {
+    border-radius: 1.5rem !important;
 }
