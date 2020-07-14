@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
@@ -10,6 +9,7 @@
     <title>{{title}}</title>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/Chart.min.css">
+    <link rel="stylesheet" href="/css/dataTables.bootstrap4.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
     <link rel="stylesheet" href="/css/main.css">
 </head>
@@ -48,11 +48,11 @@
     <main>
         <div class="container-fluid p-0">
             <div class="row no-gutters">
-                <div class="col-md-2 d-none d-md-block" id="side_nav">
+                <div class="col-md-2" id="side_nav">
                     <div class="row no-gutters">
-                        <div class="transparent">
-                            <ul class="nav flex-column">
-                                <li class="nav-item py-2 text-center">
+                        <div class="col-4 transparent">
+                            <ul class="nav flex-column text-center">
+                                <li class="nav-item py-2 ">
                                     <a class="nav-link" href="#"><i class="fas fa-tv"></i></a>
                                 </li>
                                 <li class="nav-item py-2">
@@ -74,7 +74,7 @@
 
                             </ul>
                         </div>
-                        <div class="col-8 bg-white">
+                        <div class="col-8 bg-white d-none d-lg-block">
                             <ul class="nav flex-column">
                                 <li class="nav-item py-2">
                                     <a class="nav-link" href="#">Laboratory</a>
@@ -112,6 +112,7 @@
 <script src="/js/popper.min.js"></script>
 <script src="/js/bootstrap.min.js"></script>
 <script src="/js/Chart.bundle.min.js"></script>
+<script src="/js/datatables.min.js"></script>
 <script src="/js/main.js"></script>
 
 </html>

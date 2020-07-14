@@ -41,7 +41,7 @@ app.get('/sms-logs', (req, res) => {
       throw err;
     }
 
-    res.render('index', {
+    res.render('sms-logs', {
       data: data,
       title: "message logs"
     });

@@ -1,0 +1,29 @@
+<div class="container-fluid p-4">
+    <h3 class=" mb-4">MESSAGE LOGS</h3>
+
+    <table id="example" class="table table-bordered table-light">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">IMEI</th>
+                <th scope="col">ISP</th>
+                <th scope="col">PHONENUMBER</th>
+                <th scope="col">MESSAGE</th>
+                <th scope="col">DATE</th>
+                <th scope="col">HISTORY</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {{#each data}}
+            <tr>
+                <td>{{IMEI}}</td>
+                <td>{{ISP}}</td>
+                <td>{{PHONENUMBER}}</td>
+                <TD>{{MESSAGE}}</TD>
+                <td>{{DATE}}</td>
+                <td><button class="btn btn-info">thread</button></td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>

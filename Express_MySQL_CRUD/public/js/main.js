@@ -156,3 +156,7 @@ var plot_chart_4 = new Chart(chart_4, {
         }
     }
 });
+
+$(document).ready(function () {
+    $('#example').DataTable();
+});
