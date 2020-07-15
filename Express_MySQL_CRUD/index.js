@@ -47,6 +47,22 @@ app.get('/sms-logs', (req, res) => {
     });
   });
 });
+// route for threads
+app.post('/thread', function (req, res, next) {
+  let phone_number = req.body.phone_number;
+  let sql = "SELECT * FROM MODEM_SMS_RECEIVED WHERE PHONENUMBER = " + phone_number;
+  let query = connection.query(sql, (err, data) => {
+    if (err) {
+      res.render('error');
+      throw err;
+    }
+    res.render('message-thread', {
+      data: data,
+      title: "Thread " + phone_number
+    });
+
+  })
+});
 
 app.listen(8001, () => {
   console.log('Server is running at port 8001');

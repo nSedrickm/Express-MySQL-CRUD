@@ -1,5 +1,5 @@
 <div class="container-fluid p-4">
-    <h3 class=" mb-4">MESSAGE LOGS</h3>
+    <h3 class=" mb-4">{{title}}</h3>
 
     <table id="example" class="table table-bordered table-light">
         <thead class="thead-light">
@@ -9,7 +9,6 @@
                 <th scope="col">PHONENUMBER</th>
                 <th scope="col">MESSAGE</th>
                 <th scope="col">DATE</th>
-                <th scope="col">HISTORY</th>
             </tr>
         </thead>
         <tbody>
@@ -20,12 +19,6 @@
                 <td>{{PHONENUMBER}}</td>
                 <TD>{{MESSAGE}}</TD>
                 <td>{{DATE}}</td>
-                <td>
-                    <form class="form" method="post" action="/thread">
-                        <input type="hidden" name="phone_number" value="{{PHONENUMBER}}"><button
-                            class="btn btn-info">thread</button>
-                    </form>
-                </td>
             </tr>
             {{/each}}
         </tbody>
