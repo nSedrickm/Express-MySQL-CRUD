@@ -20,7 +20,10 @@ h6 {
     color: white !important;
 }
 .brown-gradient {
-    background: linear-gradient(to right, #ffffff, #b29f94);
+    background: linear-gradient(to right top, #ffffff, #b29f94);
+}
+.bg-gray {
+    background-color: #dedfe4;
 }
 .nav-link {
     font-family: "Play", sans-serif;
@@ -68,11 +71,9 @@ dd {
     font-size: 1.33em;
 }
 
-.bg-primary {
-    background-color: rgba(15, 82, 186, 90%) !important;
-}
+.bg-primary,
 .btn-primary {
-    background-color: rgba(15, 82, 186, 90%) !important;
+    background-color: rgba(15, 82, 186, 70%) !important;
 }
 
 .form-control:focus {
@@ -82,4 +83,16 @@ dd {
     border-color: none !important;
     outline: 0;
     box-shadow: inset 0 -1px 0 rgba(15, 82, 186, 90%);
+}
+
+#login_container {
+    margin: 100px;
+    padding: 50px;
+}
+
+a,
+a:active,
+a:hover {
+    text-decoration: none !important;
+    color: inherit;
 }
