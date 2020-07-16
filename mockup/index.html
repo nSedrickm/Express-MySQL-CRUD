@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-primary py-3">
+<body class="bg-light-gray">
+    <nav class="navbar navbar-expand-lg navbar-light bg-gray-thick py-3">
         <a class="navbar-brand text-white " href="account"><i class="fas fa-user-circle fa-lg mr-3"></i> User Name</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,76 +20,70 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
 
             <form class="form-inline my-2 my-lg-0">
-                <button class="btn btn-danger my-2 my-sm-0 px-4 py-1" type="submit">logout</button>
+                <button class="btn btn-outline-light my-2 my-sm-0 px-4 py-1" type="submit">logout</button>
             </form>
         </div>
     </nav>
 
-    <div class="bg-light">
+    <div class="mt-4">
 
         <div class="row no-gutters">
-            <div class="col-md-3 ">
-                <h5 class="card-header bg-white">Patient Information</h5>
+            <div class="col-md-3 p-3">
+                <div class="col-12">
+                    <h5 class="border-bottom border-dark pb-3 ">Patient Information</h5>
+                    <dl class="row">
+                        <dt class="col-sm-4">Name</dt>
+                        <dd class="col-sm-8">Donec Samurai</dd>
 
-                <div class="card border-0 bg-primary text-white h-100">
-                    <div class="card-body p-4">
-                        <dl class="row card-text">
-                            <dt class="col-sm-4">Name</dt>
-                            <dd class="col-sm-8">Donec Samurai</dd>
+                        <dt class="col-sm-4">Age</dt>
+                        <dd class="col-sm-8">24</dd>
 
-                            <dt class="col-sm-4">Age</dt>
-                            <dd class="col-sm-8">24</dd>
+                        <dt class="col-sm-4">Sex</dt>
+                        <dd class="col-sm-8">Male</dd>
 
-                            <dt class="col-sm-4">Sex</dt>
-                            <dd class="col-sm-8">Male</dd>
+                        <dt class="col-sm-4">Height</dt>
+                        <dd class="col-sm-8">1.74</dd>
 
-                            <dt class="col-sm-4">Height</dt>
-                            <dd class="col-sm-8">1.74</dd>
+                        <dt class="col-sm-4">Weight</dt>
+                        <dd class="col-sm-8">83Kg</dd>
 
-                            <dt class="col-sm-4">Weight</dt>
-                            <dd class="col-sm-8">83Kg</dd>
+                    </dl>
 
-                        </dl>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-outline-black  my-3" data-toggle="modal"
+                        data-target="#exampleModalCenter">
+                        End Survey
+                    </button>
 
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-danger w-100 my-5" data-toggle="modal"
-                            data-target="#exampleModalCenter">
-                            End Survey
-                        </button>
-
-                        <!-- Modal -->
-                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-                            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered" role="document">
-                                <div class="modal-content text-dark">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLongTitle">End Survey</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body ">
-                                        <p>Are you sure ?</p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-danger"
-                                            data-dismiss="modal">Cancel</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
-                                    </div>
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content text-dark">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">End Survey</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body ">
+                                    <p>Are you sure ?</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-black" data-dismiss="modal">Cancel</button>
+                                    <button type="button" class="btn btn-outline-black">Save changes</button>
                                 </div>
                             </div>
                         </div>
-
-
                     </div>
-                </div>
 
+                </div>
             </div>
 
             <div class="col-md-5  p-3">
 
                 <h5 class="text-center">Questions</h5>
-                <div class="col-12 card border-0 shadow rounded mb-5 ">
+                <div class="col-12 card border-0 rounded shadow transparent mb-5 ">
                     <div class="card-body">
                         <h5 class="card-title " id="question">1 of 70</h5>
                         <p class="card-text"> what is something With supporting text below as a natural lead-in to
@@ -99,9 +93,10 @@
                         <form>
                             <div class="form-group">
                                 <label for="answer_input"></label>
-                                <input type="email" class="form-control" id="answer_input">
+                                <input type="email" class="form-control transparent border-bottom border-dark"
+                                    id="answer_input">
 
-                                <button type="submit" class="d-block w-25 mx-auto btn btn-primary my-2 ">next</button>
+                                <button type="submit" class="d-block w-25 mx-auto btn btn-black my-4 ">next</button>
 
                             </div>
                         </form>
@@ -112,12 +107,10 @@
             </div>
 
             <div class="col-md-4 p-3 h-100">
+                <div class="col-12 mb-5">
 
-
-                <h5 class="text-center">Responses</h5>
-
-                <div class="card border-0 mb-5">
-                    <div class="card-body overflow-auto">
+                    <h5 class="border-bottom border-dark pb-3">Responses</h5>
+                    <div class=" overflow-auto">
                         <p class="card-text">1) supporting text below as a natural lead-in to additional
                             content.
                         </p>
@@ -129,17 +122,15 @@
                         </p>
                     </div>
                 </div>
-
-                <div class="card border-0">
-                    <div class="card-body">
-                        <h5 class="card-title text-center" id="question">Comments</h5>
-                        <form>
-                            <div class="form-group">
-                                <textarea class="form-control mb-2" id="comment_text_area" rows="5"></textarea>
-                                <button type="submit" class="d-block w-25 mx-auto btn btn-primary mb-2 ">save</button>
-                            </div>
-                        </form>
-                    </div>
+                <div class="col-12">
+                    <h5 class="text-center" id="question">Comments</h5>
+                    <form>
+                        <div class="form-group">
+                            <textarea class="form-control transparent border border-secondary" id="comment_text_area"
+                                rows="5"></textarea>
+                            <button type="submit" class="d-block w-25 mx-auto btn btn-outline-black my-4">save</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
