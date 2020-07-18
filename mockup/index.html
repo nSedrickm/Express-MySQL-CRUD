@@ -20,7 +20,8 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
 
             <form class="form-inline my-2 my-lg-0">
-                <button class="btn btn-outline-light my-2 my-sm-0 px-4 py-1" type="submit">logout</button>
+                <a href="login"><button class="btn btn-outline-light my-2 my-sm-0 px-4 py-1"
+                        type="submit">logout</button></a>
             </form>
         </div>
     </nav>
@@ -83,11 +84,10 @@
             <div class="col-md-5 p-3">
 
                 <h5 class="text-center mx-auto border-bottom border-dark pb-3">Questions</h5>
-                <div class="col-12 card border-0 rounded  transparent mb-5 ">
+                <div class="col-12 card border-0 rounded shadow transparent mb-5 ">
                     <div class="card-body">
-                        <h5 class="card-title " id="question">1 of 70</h5>
-                        <p class="card-text"> What is something With supporting text below as a natural lead-in to
-                            additional content?.
+                        <h5 class="card-title " id="question-title">1 of 70</h5>
+                        <p class="card-text" id="question"> 1) This is question 1
                         </p>
 
                         <form>
@@ -96,7 +96,8 @@
                                 <input type="email" class="form-control transparent border-bottom border-dark"
                                     id="answer_input">
 
-                                <button type="submit" class="d-block w-25 mx-auto btn btn-black my-4 ">next</button>
+                                <button type="submit" class="d-block w-25 mx-auto btn btn-black my-4"
+                                    id="next_button">next</button>
 
                             </div>
                         </form>

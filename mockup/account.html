@@ -28,9 +28,77 @@
 
     <div class="container">
 
-        <div class="col-12 d-flex justify-content-between mt-5">
-            <a href="login"><i class='text-center far fa-arrow-alt-circle-left fa-2x'></i></a>
-            <a href="patient"><i class='text-center far fa-arrow-alt-circle-right fa-2x'></i></a>
+        <div class="col-12 d-flex justify-content-between">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-black  my-3" data-toggle="modal" data-target="#exampleModalCenter">
+                start survey
+            </button>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade " id="exampleModalCenter" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg bg-light-gray" role="document">
+                <div class="modal-content text-dark">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Survey</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="row no-gutters">
+                            <div class="col-md-5 border-right px-4">
+                                <h4 class=" my-4 ">Patient Details</h4>
+
+                                <dl>
+                                    <dt>Name</dt>
+                                    <dd>Donec Samurai</dd>
+
+                                    <dt>Age</dt>
+                                    <dd>24</dd>
+
+                                    <dt>Sex</dt>
+                                    <dd>Male</dd>
+
+                                    <dt>Height</dt>
+                                    <dd>1.74</dd>
+
+                                    <dt>Weight</dt>
+                                    <dd>83Kg</dd>
+
+                                </dl>
+
+                            </div>
+
+                            <div class="col-md-7 px-4">
+                                <h4 class="my-4 ">Health Record</h4>
+
+                                <dl>
+
+                                    <dt>Status</dt>
+                                    <dd>improving </dd>
+
+                                    <dt>Diagnosed</dt>
+                                    <dd>21/02/2020</dd>
+
+                                    <dt>Started treatment</dt>
+                                    <dd>21/02/2020</dd>
+
+                                    <dt>Last Checkup</dt>
+                                    <dd>21/05/2020</dd>
+
+                                </dl>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="index"><button type="button" class="btn btn-black py-2 px-4 ">Begin</button></a>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="row no-gutters">
