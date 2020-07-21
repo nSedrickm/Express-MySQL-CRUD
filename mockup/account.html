@@ -12,7 +12,8 @@
 <body class="bg-light-gray">
 
     <nav class="navbar navbar-expand-lg navbar-light bg-gray-thick py-3">
-        <a class="navbar-brand text-white " href="account"><i class="fas fa-user-circle fa-lg mr-3"></i>Bjarne S</a>
+        <a class="navbar-brand text-white " href="account"><i class="fas fa-user-circle fa-lg mr-3"></i>Sample
+            Username</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -21,27 +22,28 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
 
             <form class="form-inline my-2 my-lg-0">
-                <button class="btn btn-outline-light my-2 my-sm-0 px-4 py-1 " type="submit">logout</button>
+                <a class="btn btn-outline-light my-2 my-sm-0 px-4 py-1 " href="login.html">logout</a>
             </form>
         </div>
     </nav>
 
     <div class="container">
 
-        <div class="col-12 d-flex justify-content-between">
+        <div class="col-12 d-flex justify-content-end">
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-black  my-3" data-toggle="modal" data-target="#exampleModalCenter">
-                start survey
+            <button type="button" class="btn btn-black py-2 px-4  my-3" data-toggle="modal"
+                data-target="#exampleModalCenter">
+                Start Call
             </button>
         </div>
 
         <!-- Modal -->
         <div class="modal fade " id="exampleModalCenter" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg bg-light-gray" role="document">
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                 <div class="modal-content text-dark">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Survey</h5>
+                        <h5 class="modal-title" id="exampleModalLongTitle">Participant</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -49,45 +51,15 @@
                     <div class="modal-body">
 
                         <div class="row no-gutters">
-                            <div class="col-md-5 border-right px-4">
-                                <h4 class=" my-4 ">Patient Details</h4>
+                            <div class="col-md-6 border-right px-4">
+                                <h4 class=" my-4 ">Participant Details</h4>
 
                                 <dl>
                                     <dt>Name</dt>
-                                    <dd>Donec Samurai</dd>
+                                    <dd>Sample Participant</dd>
 
-                                    <dt>Age</dt>
-                                    <dd>24</dd>
-
-                                    <dt>Sex</dt>
-                                    <dd>Male</dd>
-
-                                    <dt>Height</dt>
-                                    <dd>1.74</dd>
-
-                                    <dt>Weight</dt>
-                                    <dd>83Kg</dd>
-
-                                </dl>
-
-                            </div>
-
-                            <div class="col-md-7 px-4">
-                                <h4 class="my-4 ">Health Record</h4>
-
-                                <dl>
-
-                                    <dt>Status</dt>
-                                    <dd>improving </dd>
-
-                                    <dt>Diagnosed</dt>
-                                    <dd>21/02/2020</dd>
-
-                                    <dt>Started treatment</dt>
-                                    <dd>21/02/2020</dd>
-
-                                    <dt>Last Checkup</dt>
-                                    <dd>21/05/2020</dd>
+                                    <dt>Region</dt>
+                                    <dd>North West</dd>
 
                                 </dl>
 
@@ -95,7 +67,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <a href="index"><button type="button" class="btn btn-black py-2 px-4 ">Begin</button></a>
+                        <a href="index.html"><button type="button" class="btn btn-black py-2 px-4 ">Begin</button></a>
                     </div>
                 </div>
             </div>
@@ -106,15 +78,14 @@
                 <h4 class=" my-4 ">Account Details</h4>
 
                 <dl>
-                    <dt>User ID</dt>
-                    <dd>OX144dc-22</dd>
-
                     <dt>User Name</dt>
-                    <dd>Bjarne S</dd>
+                    <dd>Sample Username</dd>
 
-                    <dt>alias</dt>
+                    <dt>Phone Number</dt>
                     <dd>user handle223</dd>
 
+                    <dt>User ID</dt>
+                    <dd>OX144dc-22</dd>
                 </dl>
 
             </div>
@@ -123,11 +94,11 @@
                 <h4 class="my-4 ">META </h4>
 
                 <dl>
-                    <dt>status</dt>
-                    <dd>active</dd>
-
                     <dt>Last login</dt>
                     <dd>21/02/2020</dd>
+
+                    <dt>Calls made</dt>
+                    <dd>1254</dd>
 
                     <dt>Browser</dt>
                     <dd>Google Chrome</dd>
@@ -135,16 +106,13 @@
                     <dt>Browser Version</dt>
                     <dd>Version 83.0.4103.116 (Official Build) (64-bit)</dd>
 
-                    <dt>Calls made</dt>
-                    <dd>1254</dd>
-
+                    <dt>MAC</dt>
+                    <dd>00:A0:C9:14:C8:29</dd>
                 </dl>
 
             </div>
         </div>
     </div>
-
-
 
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.bundle.js"></script>
